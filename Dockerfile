@@ -1,4 +1,4 @@
-FROM znly/protoc
+FROM znly/protoc:latest
 
 WORKDIR /
 
