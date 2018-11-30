@@ -28,7 +28,7 @@ RUN apk update \
     # Update and updgrage alpine packages
     && apk upgrade \
     # Install required pakcages
-    && apk --no-cache add bash git make openssh protobuf
+    && apk --no-cache add bash git make openssh protobuf protobuf-dev 
 
 EXPOSE 2000/udp
 
