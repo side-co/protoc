@@ -1,6 +1,6 @@
-FROM golang:alpine AS protoc_plugins
+FROM golang:alpine3.10 AS protoc_plugins
 
-ENV PROTO_GEN_GO_TAG=v1.2.0
+ENV PROTO_GEN_GO_TAG=v1.3.1
 
 RUN apk --no-cache add git \
     && go get -u \
@@ -10,7 +10,7 @@ RUN apk --no-cache add git \
     && git -C $GOPATH/src/github.com/golang/protobuf checkout $PROTO_GEN_GO_TAG \
     && go install github.com/golang/protobuf/protoc-gen-go
 
-FROM alpine:latest
+FROM alpine:3.10
 
 WORKDIR /
 
