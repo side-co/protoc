@@ -10,7 +10,7 @@ RUN apk --no-cache add git \
     && git -C $GOPATH/src/github.com/golang/protobuf checkout $PROTO_GEN_GO_TAG \
     && go install github.com/golang/protobuf/protoc-gen-go
 
-FROM alpine:3.10
+FROM alpine:3.12.3
 
 WORKDIR /
 
